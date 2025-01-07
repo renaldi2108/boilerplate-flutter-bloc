@@ -1,0 +1,35 @@
+targets:
+  $default:
+    builders:
+      injectable_generator|injectable_builder:
+        enabled: true
+        generate_for:
+          include:
+            - lib/**_module.dart
+            - lib/**_bloc.dart
+            - lib/**_cubit.dart
+            - lib/**_remote_source.dart
+            - lib/**_local_source.dart
+            - lib/**_repository.dart
+            - lib/**_mapper.dart
+            - lib/**_usecase.dart
+            - lib/shared/core/network/network_util.dart
+            - lib/shared/core/alice/appalice.dart
+
+      injectable_generator|injectable_config_builder:
+        enabled: true
+        generate_for:
+          include:
+            - lib/shared/core/di/di.dart
+
+      freezed|freezed:
+        enabled: true
+        generate_for:
+          include:
+            - lib/**_bloc.dart
+            - lib/**_cubit.dart
+            - lib/shared/core/base/state.dart
+        options:
+          build_extensions:
+            '^lib/{{dir}}/{{file}}.dart': 'lib/{{dir}}/generated/{{file}}.freezed.dart'
+            '^test/{{dir}}/{{file}}.dart': 'test/{{dir}}/generated/{{file}}.freezed.dart'
