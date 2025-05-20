@@ -39,7 +39,7 @@ lib/
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/username/flutter-boilerplate.git
+   git clone https://github.com/renaldi2108/boilerplate-flutter-bloc.git
    ```
 2. Install dependencies:
    ```bash
